@@ -1,8 +1,8 @@
 create table costumers (
-	Id INT,
-	full_name VARCHAR(50),
-	timestamp VARCHAR(50),
-	delivery_address VARCHAR(50),
+	Id INT NOT NULL UNIQUE,
+	full_name VARCHAR(50) NOT NULL,
+	timestamp VARCHAR(50) NOT NULL,
+	delivery_address VARCHAR(50) NOT NULL,
 	primary key(Id)
 
 );
@@ -15,10 +15,10 @@ UPDATE costumers SET timestamp = '10:30 PM' WHERE Id = 1;
 DELETE FROM costumers WHERE Id = 1;
 
 create table orders (
-	code VARCHAR(50),
+	code VARCHAR(50) NOT NULL UNIQUE,
 	costumer_id INT,
-	total_sum INT,
-	is_paid VARCHAR(50),
+	total_sum INT NOT NULL,
+	is_paid VARCHAR(50) NOT NULL,
 	primary key(code),
 	foreign key(costumer_id) references costumers
 );
@@ -31,10 +31,10 @@ UPDATE orders SET is_paid = false WHERE total_sum > 3;
 DELETE FROM orders WHERE total_sum = 1;
 
 create table products (
-	Id INT,
-	name VARCHAR(50),
+	Id INT NOT NULL UNIQUE,
+	name VARCHAR(50) NOT NULL UNIQUE,
 	description VARCHAR(50),
-	price VARCHAR(50),
+	price VARCHAR(50) NOT NULL,
 	primary key(Id)
 
 );
@@ -45,9 +45,9 @@ insert into products (Id, name, description, price) values (41, 'Thom', 'Rubber'
 insert into products (Id, name, description, price) values (15, 'Pyotr', 'Stone', '$4.30');
 
 create table order_items (
-	order_code VARCHAR(50),
-	product_id INT,
-	quantity INT,
+	order_code VARCHAR(50) NOT NULL UNIQUE,
+	product_id INT NOT NULL UNIQUE,
+	quantity INT NOT NULL,
     foreign key(order_code) references orders,
     foreign key(product_id) references products
 );
