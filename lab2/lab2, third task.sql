@@ -1,4 +1,4 @@
-a)
+
 create table students (
 	full_name VARCHAR(50),
 	age INT,
@@ -15,7 +15,7 @@ insert into students (full_name, age, birth_of_date, gender, average_grade, info
 insert into students (full_name, age, birth_of_date, gender, average_grade, info_about_yourself, need_for_dormitory, additional_info) values ('Abeu Menichi', 17, '3/20/2004', 'Male', 3.83, 'Disability Insurance', true);
 insert into students (full_name, age, birth_of_date, gender, average_grade, info_about_yourself, need_for_dormitory, additional_info) values ('Ninette Aiton', 18, '6/7/2003', 'Female', 3.05, 'Job Descriptions', false, 'singer');
 
-b)
+
 create table instructors (
 	full_name VARCHAR(50),
 	speaking_languages VARCHAR(50),
@@ -29,7 +29,7 @@ insert into instructors (full_name, speaking_languages, work_experience, possibi
 insert into instructors (full_name, speaking_languages, work_experience, possibility_to_remote_lessons) values ('Hillel Acreman', 'Northern Sotho', 10, true);
 
 
-c)
+
 create table lesson_participants (
 	lesson_title VARCHAR(50),
 	teaching_instructor VARCHAR(50),
