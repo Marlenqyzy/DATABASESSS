@@ -59,6 +59,10 @@ grant administrator to accountant, support;
 revoke select on accounts from accountant;
 revoke update on transactions from support;
 
+--3.
+--b)
+--c)
+
 --5.
 --a)
 create unique index index_of_customers on accounts(customer_id, currency);
