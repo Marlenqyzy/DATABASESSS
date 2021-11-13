@@ -61,7 +61,7 @@ revoke update on transactions from support;
 
 --3.
 --b)
---c)
+alter 
 
 --5.
 --a)
@@ -80,3 +80,6 @@ commit;
 if balance < limit where account_id = 'RS88012' then rollback;
 else commit;
 --d)
+update accounts set balance = balance + 100 where account_id = 'NT10204';
+update accounts set balance = balance - 100 where account_id = 'RS88012';
+commit;
