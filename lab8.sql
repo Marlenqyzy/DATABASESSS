@@ -76,7 +76,7 @@ end; $$
 language plpgsql;
 
 --b)
-create procedure kru() as
+create procedure kru2() as
 $$
 begin
 update worker
