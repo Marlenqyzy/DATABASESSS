@@ -118,15 +118,9 @@ create table facilities(
 
 
 with recursive recommenders(recommender, member) as (
-	select recommendedby, memid
-		from members
-	union all
-	select members.recommendedby, recommenders.member
-		from recommenders
-		inner join members
-			on members.memid = recommenders.recommender
-)
-
+select recommendedby, memid from members union all
+select members.recommendedby, recommenders.member from recommenders inner join members
+on members.memid = recommenders.recommender)
 
 select recommenders.member, recommenders.recommender, members.firstname, members.surname
 from recommenders inner join members on recommenders.recommender = members.memid
